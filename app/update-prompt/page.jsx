@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from 'react'
-import { useSession } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 import Form from '@components/Form';
@@ -43,10 +42,10 @@ const EditPrompt = () => {
         const response = await fetch(`/api/prompt/${promptId}`, {
           method: 'PATCH',
           body: JSON.stringify({
-            prompt:post.prompt,
+            prompt: post.prompt,
             tag: post.tag
           })
-        } )
+        } );
         if ( response.ok ) {
           router.push('/');
         }

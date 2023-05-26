@@ -9,7 +9,8 @@ const PromptCardList = ({data, handleTagClick}) => {
       {data.map( (post) => (
         <PromptCard
           key={post._id}
-          post
+          post={post}
+          hangleTagClick={handleTagClick}
         />
       ) )}
     </div>
@@ -54,4 +55,4 @@ const Feed = () => {
   )
 }
 
-export default Feed
+export default Feed;

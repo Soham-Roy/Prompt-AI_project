@@ -11,7 +11,8 @@ export const GET = async(req, {params}) => {
             return new Response("Prompt not found", {status: 404});
 
         return new Response(JSON.stringify(prompt), {status: 200});
-    } catch (error) {
+    } 
+    catch (error) {
         return new Response("Failed to fetch the prompt", {status: 500});
     }
 }
@@ -42,7 +43,7 @@ export const PATCH = async (request, {params}) => {
 export const DELETE = async (request, {params}) => {
     try {
         await connectToDB();
-        await Prompt.findByIdAndRemove(params.id)
+        await Prompt.findByIdAndRemove(params.id);
 
         return new Response("Prompt deleted successfully", {status: 200});
     } catch (error) {

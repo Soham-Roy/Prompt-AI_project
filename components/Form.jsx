@@ -8,8 +8,6 @@ const Form = ( {
     handleSubmit
   } ) => {
 
-    
-
   return (
     <section className="w-full max-w-full flex-start flex-col">
       <h1 className="head_text text-left">
@@ -30,7 +28,7 @@ const Form = ( {
           <textarea 
             value={post.prompt}
             onChange={(e) => setPost({...post, prompt: e.target.value})}
-            placeholder="Write your prompty here..."
+            placeholder="Write your prompt here..."
             required
             className="form_textarea"
           />
@@ -38,14 +36,14 @@ const Form = ( {
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
             Tag {` `}
-            <span>
-              (#product, #webdevelopment, #idea)
+            <span className="font-normal">
+              (#product, #webdevelopment, #idea, etc.)
             </span>
           </span>
           <input 
             value={post.tag}
             onChange={(e) => setPost({...post, tag: e.target.value})}
-            placeholder="#tag"
+            placeholder="#Tag"
             required
             className="form_input"
           />
@@ -64,7 +62,7 @@ const Form = ( {
         </div>
       </form>
     </section>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
